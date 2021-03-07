@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Header from 'pages/landingPage';
+import Header from 'parts/Header';
 
-export default function landingPage() {
+export default function LandingPage(props) {
     return (
         <div>
-            <Header {...this.props}></Header>
+            <Header {...props}></Header>
         </div>
     )
 }

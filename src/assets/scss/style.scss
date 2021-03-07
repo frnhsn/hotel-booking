@@ -44,11 +44,18 @@
 @import "print";
 
 .brand-text-icon {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 500;
-    font-family: "Poppins", sans-serif,
-    color: $primary
-
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+    color: $primary;
+    &:hover {
+        text-decoration: none;
+    }
+    
+    span {
+        color: $gray-900;
+    }
 }
 
 Header {
@@ -59,19 +66,26 @@ Header {
     .navbar {
         height: 80px;
 
-            .navbar-nav {
-                li.nav-item {
-                    a {
-                        &.nav-link {
-                            color: $gray-900;
-                            padding-left: 1rem;
-                            padding-right: 1rem;
-                            &:hover {
-                                text-decoration: underline;
-                            }
+        ul.navbar-nav {
+            li.nav-item {
+                &.active {
+                    a.nav-link {
+                        color: $primary;
+                    }
+                }
+                a {
+                    &.nav-link {
+                        letter-spacing: 1px;
+                        color: $gray-900;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        &:hover {
+                            text-decoration: underline;
                         }
                     }
                 }
             }
+        }
+
     }
 }

@@ -42,21 +42,19 @@ export default function Button(props) {
                 </a>
             )
         } else {
-            <Link 
+            return (
+                <Link 
                 to={props.href}
                 className={className.join(" ")}
                 style={props.style}
                 onClick={onClick}
-            >
-                {props.children}
-            </Link>
+                >
+                    {props.children}
+                </Link>
+            )
         }
     }
 
-    return (
-        <div>
-        </div>
-    )
 } 
 
 Button.propTypes = {
