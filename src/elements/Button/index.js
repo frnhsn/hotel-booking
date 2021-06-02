@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 export default function Button(props) {
-    const className = [props.className];
+    const className = props.className ? [props.className] : [];
     if (props.isPrimary) className.push('btn-primary');
     if (props.isLarge) className.push('btn-lg');
     if (props.isSmall) className.push('btn-sm');
     if (props.isBlock) className.push('btn-block');
     if (props.hasShadow) className.push('btn-shadow');
-    if (props.isPrimary) className.push('btn-primary');
 
     const onClick = () => {
         if (props.onClick) props.onClick();
@@ -55,6 +54,15 @@ export default function Button(props) {
         }
     }
 
+    return (<button 
+        className={className.join(" ")}
+        style={{border: "1px solid transparent"}}
+        onClick={onClick}
+        >
+            {props.children}
+        </button>
+    )
+
 } 
 
 Button.propTypes = {
@@ -63,6 +71,7 @@ Button.propTypes = {
     onClick: propTypes.func,
     target: propTypes.string,
     className: propTypes.string,
+    isPrimary: propTypes.bool,
     isDisabled: propTypes.bool,
     isLoading: propTypes.bool,
     isLarge: propTypes.bool,
